@@ -14,7 +14,9 @@ urlpatterns = [
     path('payment/', include('payments.urls')),
     path('address/', include('addresses.urls')),
     path('auth/', include('Auth.urls')),
-    path('library/', include('library.urls'))
+    path('library/', include('library.urls')),
+    path('session/', include('sess_cook.urls')),
+    path('send_mail/', include('send_mails.urls')),
 ]
 
 if settings.DEBUG:

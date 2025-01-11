@@ -21,11 +21,9 @@ def book_list(request):
 
 def search_books(request):
     query = request.GET.get('q')
-    if query:
-        books = Book.objects.filter(title__icontains=query) | Book.objects.filter(author__icontains=query)
-        return render(request, 'search_books.html', {'books': books, 'query': query})
-    else:
-        return render(request, 'search_books.html', {'books': 'No books found'})
+    books = Book.objects.filter(title__icontains=query) | Book.objects.filter(author__icontains=query)
+    return render(request, 'search_books.html', {'books': books, 'query': query})
+
 
 
 

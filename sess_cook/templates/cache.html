@@ -1,0 +1,5 @@
+{% load cache %}
+
+{% cache 300 some_unique_key %}
+    <p>This is cached page. Time {{ now }}</p>
+{% endcache %}
